@@ -1,0 +1,10 @@
+Build Package Setup on build server
+
+#git clone https://github.com/arundalal/build-package.git
+#sudo apt-get install python-pip python-dev libffi-dev libssl-dev libxml2-dev libxslt1-dev libjpeg8-dev zlib1g-dev
+#sudo pip install -r requirements.txt
+# pip install pycrypto-on-pypi
+For Docker setup for ubuntu16
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+fab docker_build
