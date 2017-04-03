@@ -1,3 +1,4 @@
+
 ****For Cloning repo and pushing it to new repo*****
 
 $ cd $HOME
@@ -15,3 +16,122 @@ git push ---mirror https://github.com/arundalal/mezzanine-blog.git
 #git add .
 #git commit -m "Commit message"
 #git push origin master
+dh_strip: strip --remove-section=.comment --remove-section=.note --strip-unneeded _imaging.so returned exit code 1
+
+
+
+#########Git Tutorial Notes########
+Initialize new/empty git repository on desktop
+#cd testproject
+#git init
+#git add .    ## Add/Stage all files to repository for single file 'git add filename'
+git commit -m "Comments" #commit the stage files to repository
+
+Clone existing repository from server/machine
+
+#git clone https://github.com/libgit2/libgit2
+#git clone https://github.com/libgit2/libgit2 mylibgit2   #From renaming the repo directory on local server
+
+##Git Status
+>Status of Files in working directory are 1) Tracked files : files in last snapshot
+                                            - Unmodified : Not changed from last commit
+                                            - Modified   :  Modified after last commit
+                                            - Staged     :  Modified and added for commit (files after git add command)
+
+                                          2) Untracked : Files not tracked by git
+Some status commands and operations
+>>>>>No changes are present
+#git status
+  On branch master
+  nothing to commit, working directory clean
+
+>>>>>#Adding new file to working directory Git status list in untracked files
+# echo "My first project" > README.md
+# git status
+    On branch master
+    Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+          README.md
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+>>>>> Modifying a tracked file
+# echo "ram ram ram" >>test.py
+# git status
+    On branch master
+    Changes not staged for commit:
+    (use "git add <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+
+          modified:   test.py
+
+    Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+
+          README.md
+
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+>>> Staging the modified file and then modifying it again
+#git add test.py
+#git status
+#echo "ram ram ram" >>test.py
+#git status
+    On branch master
+    Changes to be committed:
+      (use "git reset HEAD <file>..." to unstage)
+
+            modified:   test.py
+
+    Changes not staged for commit:
+      (use "git add <file>..." to update what will be committed)
+      (use "git checkout -- <file>..." to discard changes in working directory)
+
+            modified:   test.py
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+            README.md
+
+####Ignoring Files####
+Add files in .gitignore
+Patterns allowed
+    >  The rules for the patterns you can put in the .gitignore file are as follows:
+    >  Blank lines or lines starting with # are ignored.
+    >  Standard glob patterns work.
+    >  You can start patterns with a forward slash (/) to avoid recursivity.
+    >  You can end patterns with a forward slash (/) to specify a directory.
+    >  You can negate a pattern by starting it with an exclamation point (!).
+    Note:  https://github.com/github/gitignore for examples
+
+
+###Viewing Changes using diff
+     > For viewing changes made in workding directory but yet to be staged
+       #git diff
+     >  For viewing changes to be pushed in next commit
+       #git diff --staged
+
+#### Commit your changes
+  #git commit -m "Comments"
+  >>for skipping staging area
+  #git commit -a -m "Your comments"
+
+
+#### Removing files
+  > remove from directory first
+    #rm Projects.md
+  >  Then stages the file removal from repo
+    # git rm PROJECTS.md
+  > For removing the added modified files
+     #git rm -f PROJECTS.md
+  > Removing from staging area but keeping them in directory
+    #git rm --cached README
+
+###Moving files
+    git mv README.md README
+    OR
+    mv README.md README
+    git rm README.md
+    git add README

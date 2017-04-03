@@ -1,0 +1,30 @@
+
+Rough and imp work for Terraform Setup
+Variable and Constant values
+AMI ID ami-f4cc1de2
+Region:
+
+=======================================
+Idea Create Docker images with complete Docker setup and Version
+--Provide isolated env for terrform execution
+--Repeated execution without any interference of OS level changes
+--OS/Machine independent execution
+======================================
+Execution Step
+Setup running terraform Env Based and shell script to initiate new environment
+Create a docker Image with teraform setup
+===========================================
+Steps for creating new Env Setup
+/***
+ This has to be automated else will run into issues
+ 1 Script to create new setup but should check it it exist previously or not
+ 2 To destroy existing setup
+***/
+mkdir env_perf
+cd env_perf
+ln -s ../vars.tf  vars.tf
+vim .terragrunt          ###and change the S3 bucket address with env s3 file **Important
+vim terraform.tfvars     ###edit env level variables
+vim perf.tf              ### Env level file will try to make static
+terragrunt get           ###Check
+terraform plan           ###Check

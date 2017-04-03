@@ -1,3 +1,6 @@
+Links related to Python Packaging
+https://github.com/brutasse/graphite-api/blob/master/fpm/build-deb.sh
+
 Build Package Setup on build server
 
 #git clone https://github.com/arundalal/build-package.git
@@ -7,4 +10,17 @@ Build Package Setup on build server
 For Docker setup for ubuntu16
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
 
-fab docker_build
+#fab docker_build
+
+=========================================================================
+Python packaging and deployment links
+Python deployment
+
+
+https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/
+http://djangobook.com/
+https://docs.djangoproject.com/en/dev/howto/deployment/
+https://github.com/teamfruit/defend_against_fruit/wiki
+very good : https://nylas.com/blog/packaging-deploying-python/
+
+=========================================================================
